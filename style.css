@@ -1,0 +1,427 @@
+/* ================================
+   SPENDWISE THEME
+================================ */
+
+:root {
+    --brand-color: #2563eb;
+    --accent-color: #10b981;
+    --surface-color: #ffffff;
+    --background-color: #f1f5f9;
+    --primary-text: #1e293b;
+    --secondary-text: #64748b;
+    --border-color: #e2e8f0;
+}
+
+
+/* ================================
+   GENERAL STYLES
+================================ */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: var(--background-color);
+    color: var(--primary-text);
+}
+
+
+/* ================================
+   MAIN DASHBOARD GRID
+================================ */
+
+.dashboard {
+    min-height: 100vh;
+
+    display: grid;
+
+    grid-template-columns: 240px 1fr;
+}
+
+
+/* ================================
+   SIDEBAR
+================================ */
+
+.sidebar {
+    background: var(--surface-color);
+    border-right: 1px solid var(--border-color);
+
+    padding: 25px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.logo h2 {
+    margin: 0;
+    color: var(--brand-color);
+}
+
+.logo p {
+    margin: 0;
+    font-size: 13px;
+    color: var(--secondary-text);
+}
+
+
+/* Sidebar navigation uses Flexbox */
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebar-nav a {
+    padding: 12px 15px;
+
+    text-decoration: none;
+
+    color: var(--secondary-text);
+
+    border-radius: 8px;
+
+    transition: 0.2s;
+}
+
+.sidebar-nav a:hover,
+.sidebar-nav a.active {
+    background: var(--brand-color);
+    color: white;
+}
+
+
+/* ================================
+   MAIN CONTENT
+================================ */
+
+.main-content {
+    min-width: 0;
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+.header {
+    background: var(--surface-color);
+
+    padding: 25px 30px;
+
+    border-bottom: 1px solid var(--border-color);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1 {
+    margin: 0;
+}
+
+.header p {
+    margin: 5px 0 0;
+    color: var(--secondary-text);
+}
+
+
+/* Header Flexbox */
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+/* ================================
+   MAIN AREA
+================================ */
+
+main {
+    padding: 30px;
+}
+
+.section-heading {
+    margin-bottom: 20px;
+}
+
+.section-heading h2 {
+    margin: 0;
+}
+
+.section-heading p {
+    color: var(--secondary-text);
+}
+
+
+/* ================================
+   CATEGORY GRID
+================================ */
+
+/*
+   CSS Grid is used here to arrange
+   the six financial category cards.
+*/
+
+.category-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+/* ================================
+   CATEGORY CARD
+================================ */
+
+.category-card {
+    background: var(--surface-color);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 12px;
+
+    padding: 20px;
+
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+
+    cursor: pointer;
+
+    transition:
+        transform 200ms ease,
+        box-shadow 200ms ease;
+}
+
+
+/* Hover micro-interaction */
+
+.category-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10);
+}
+
+
+/* Keyboard focus micro-interaction */
+
+.category-card:focus {
+    outline: 3px solid var(--accent-color);
+
+    transform: translateY(-4px);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10);
+}
+
+
+/* ================================
+   CARD CONTENT
+================================ */
+
+.card-top {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.card-icon {
+    font-size: 30px;
+}
+
+.card-label {
+    color: var(--secondary-text);
+
+    font-size: 14px;
+}
+
+.card-content {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.card-content h3 {
+    margin: 0;
+
+    font-size: 25px;
+}
+
+.card-content p {
+    margin: 0;
+
+    color: var(--secondary-text);
+}
+
+
+/* Card footer uses Flexbox */
+
+.card-footer {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding-top: 15px;
+
+    border-top: 1px solid var(--border-color);
+}
+
+.card-footer span {
+    color: var(--secondary-text);
+}
+
+.card-footer strong {
+    color: var(--accent-color);
+}
+
+
+/* ================================
+   SUMMARY
+================================ */
+
+.summary-section {
+    margin-top: 30px;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.summary-box {
+    background: var(--surface-color);
+
+    padding: 20px;
+
+    border-radius: 12px;
+
+    border: 1px solid var(--border-color);
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.summary-box span {
+    color: var(--secondary-text);
+}
+
+.summary-box strong {
+    font-size: 22px;
+
+    color: var(--primary-text);
+}
+
+
+/* ================================
+   RESPONSIVE DESIGN
+================================ */
+
+/*
+   Below 768px the dashboard
+   becomes a single-column layout.
+*/
+
+@media (max-width: 768px) {
+
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        border-right: none;
+
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .sidebar-nav {
+        flex-direction: row;
+
+        flex-wrap: wrap;
+    }
+
+    .header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .summary-section {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* ================================
+   SMALL MOBILE DEVICES
+================================ */
+
+@media (max-width: 480px) {
+
+    main {
+        padding: 20px;
+    }
+
+    .header {
+        padding: 20px;
+    }
+
+    .sidebar {
+        padding: 20px;
+    }
+
+    .sidebar-nav {
+        flex-direction: column;
+    }
+
+}/* ================================
+   DARK THEME
+================================ */
+
+@media (prefers-color-scheme: dark) {
+
+    :root {
+        --brand-color: #60a5fa;
+        --accent-color: #34d399;
+        --surface-color: #1e293b;
+        --background-color: #0f172a;
+        --primary-text: #f8fafc;
+        --secondary-text: #cbd5e1;
+        --border-color: #334155;
+    }
+
+}
